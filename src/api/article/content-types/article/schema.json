@@ -1,49 +1,47 @@
 {
-  "kind": "collectionType",
   "collectionName": "articles",
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
-    "description": "Create your blog content"
+    "displayName": "Article"
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "title": { "type": "string", "required": true },
+    "subtitle": { "type": "text" },
+    "content": { "type": "richtext" },
+    "date": { "type": "date" },
+    "author": { "type": "string" },
+    "sources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "meta.source"
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos"]
-    },
-    "author": {
+    "mainTheme": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+      "target": "api::theme.theme"
     },
-    "category": {
+    "secondaryThemes": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
+      "relation": "manyToMany",
+      "target": "api::theme.theme"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "concepts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::concept.concept"
+    },
+    "complexityLevel": {
+      "type": "enumeration",
+      "enum": ["basic", "intermediate", "advanced"]
     }
   }
 }
