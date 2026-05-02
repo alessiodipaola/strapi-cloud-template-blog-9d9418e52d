@@ -1,0 +1,39 @@
+{
+  "collectionName": "logical_relations",
+  "info": {
+    "singularName": "logical-relation",
+    "pluralName": "logical-relations",
+    "displayName": "Logical Relation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "cause-effect",
+        "premise-conclusion",
+        "problem-solution",
+        "social-impact",
+        "ecological-impact",
+        "correlation",
+        "contradiction",
+        "complementarity"
+      ]
+    },
+    "elementA": {
+      "type": "dynamiczone",
+      "components": ["meta.article-ref", "meta.theme-ref", "meta.concept-ref"]
+    },
+    "elementB": {
+      "type": "dynamiczone",
+      "components": ["meta.article-ref", "meta.theme-ref", "meta.concept-ref"]
+    },
+    "explanation": { "type": "richtext" },
+    "strength": {
+      "type": "enumeration",
+      "enum": ["weak", "medium", "strong"]
+    }
+  }
+}
