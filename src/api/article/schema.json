@@ -1,0 +1,47 @@
+{
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "subtitle": { "type": "text" },
+    "content": { "type": "richtext" },
+    "date": { "type": "date" },
+    "author": { "type": "string" },
+    "sources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "meta.source"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag"
+    },
+    "mainTheme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::theme.theme"
+    },
+    "secondaryThemes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theme.theme"
+    },
+    "concepts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::concept.concept"
+    },
+    "complexityLevel": {
+      "type": "enumeration",
+      "enum": ["basic", "intermediate", "advanced"]
+    }
+  }
+}
