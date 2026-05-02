@@ -1,0 +1,31 @@
+{
+  "collectionName": "concepts",
+  "info": {
+    "singularName": "concept",
+    "pluralName": "concepts",
+    "displayName": "Concept"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "definition": { "type": "richtext" },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article"
+    },
+    "themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theme.theme"
+    },
+    "logicalRelations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::logical-relation.logical-relation",
+      "mappedBy": "concept"
+    }
+  }
+}
