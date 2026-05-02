@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_meta_article_refs",
+  "info": {
+    "displayName": "Article Ref",
+    "icon": "file"
+  },
+  "attributes": {
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    }
+  }
+}
