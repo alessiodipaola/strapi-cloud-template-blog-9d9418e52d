@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_meta_concept_refs",
+  "info": {
+    "displayName": "Concept Ref",
+    "icon": "book"
+  },
+  "attributes": {
+    "concept": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::concept.concept"
+    }
+  }
+}
