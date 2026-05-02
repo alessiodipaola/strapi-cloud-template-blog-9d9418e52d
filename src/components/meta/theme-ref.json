@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_meta_theme_refs",
+  "info": {
+    "displayName": "Theme Ref",
+    "icon": "folder"
+  },
+  "attributes": {
+    "theme": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::theme.theme"
+    }
+  }
+}
